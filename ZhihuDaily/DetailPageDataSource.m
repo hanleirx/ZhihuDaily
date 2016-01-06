@@ -14,7 +14,8 @@
 
 -(void)retrieveDataFromServerWithIdentifier:(NSUInteger)identifier CompletionHandler:(void (^)(void)) completion {
     NSURLSession* session = [NSURLSession sharedSession];
-    NSString* requestURLString = [NSString stringWithFormat:@"http://news-at.zhihu.com/api/4/news/%lu", identifier];
+    NSString* requestURLString = [NSString stringWithFormat:@"http://news-at.zhihu.com/api/4/news/%lu",
+                                  (unsigned long)identifier];
     NSURL* requestURL = [NSURL URLWithString: requestURLString];
     [[session dataTaskWithURL: requestURL completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
         [[GCDQueue mainQueue] executeAsync:^{
