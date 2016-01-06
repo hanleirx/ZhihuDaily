@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DetailStory.h"
 
-@interface DetailStoryWebView : UIView
+@interface DetailStoryWebView : UIView <UIWebViewDelegate>
 
 @property (nonatomic) DetailStory* detailStory;
 

@@ -40,6 +40,7 @@
 -(UIWebView *)detailStoryWebView {
     if (_detailStoryWebView == nil) {
         _detailStoryWebView = [[UIWebView alloc]initWithFrame:self.bounds];
+        _detailStoryWebView.delegate = self;
     }
     return _detailStoryWebView;
 }
@@ -85,6 +86,15 @@
             view.frame = frame;
         }
     }
+}
+
+-(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
+    if ( inType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[inRequest URL]];
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end
