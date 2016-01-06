@@ -3,7 +3,6 @@
 *又一个知乎日报 iOS 客户端。*
 
 ![Main Page 1](Screenshots/MainPage1.png)
-![Main Page 2](Screenshots/MainPage2.png)
 ![Detail Page 1](Screenshots/DetailPage1.png)
 
 ## 项目特色
