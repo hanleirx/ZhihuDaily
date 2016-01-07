@@ -38,6 +38,7 @@
 }
 
 -(void)retrieveDataFromServer: (void (^)(void)) completion {
+    completion = completion == nil ? ^(){return;} : completion;
     NSURLSession* session = [NSURLSession sharedSession];
     NSURL* requestURL = [NSURL URLWithString: @"http://news-at.zhihu.com/api/4/news/latest"];
     [[session dataTaskWithURL: requestURL completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
@@ -60,11 +61,16 @@
     }] resume];
 }
 
--(void)getLastStoriesDataFromServer:(void (^)(void)) completion {
+-(void)getLastStoriesDataFromServer:(void (^)(BOOL)) completion {
+    completion = completion == nil ? ^(BOOL succeed){return;} : completion;
     NSURLSession* session = [NSURLSession sharedSession];
     NSURL* URL = [NSURL URLWithString: @"http://news.at.zhihu.com/api/4/news/before/"];
     NSDateFormatter* formatter = [DailyStories sharedFormatter];
     NSString* dateString = [formatter stringFromDate:((DailyStories*)[self.dailyStoriesArray lastObject]).date];
+    if (dateString == nil) {
+        completion(NO);
+        return;
+    }
     NSURL* requestURL = [NSURL URLWithString:dateString relativeToURL:URL];
     [[session dataTaskWithURL:requestURL completionHandler:^(NSData* data, NSURLResponse* response, NSError* error) {
         [[GCDQueue mainQueue] executeAsync:^{
@@ -77,9 +83,11 @@
                     NSDictionary* result = object;
                     DailyStories* dailyStories = [[DailyStories alloc]initWithData:result];
                     [self.dailyStoriesArray addObject:dailyStories];
+                    completion(YES);
+                    return;
                 }
             }
-            completion();
+            completion(NO);
         }];
     }] resume];
 }

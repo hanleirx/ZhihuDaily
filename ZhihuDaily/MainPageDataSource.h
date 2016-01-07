@@ -14,7 +14,7 @@
 @interface MainPageDataSource : NSObject
 
 -(void)retrieveDataFromServer: (void (^)(void)) completion;
--(void)getLastStoriesDataFromServer:(void (^)(void)) completion;
+-(void)getLastStoriesDataFromServer:(void (^)(BOOL)) completion;
 -(NSInteger)numberOfTopStories;
 -(NSInteger)numberOfSections;
 -(NSInteger)numberOfStoriesInSection:(NSInteger)section;

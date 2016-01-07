@@ -146,7 +146,10 @@ static const CGFloat headerViewHeight = 223.0f;
         CGFloat maximumOffset = self.tableView.contentSize.height - self.tableView.frame.size.height;
         if (maximumOffset <= currentOffset + 10) {
             self.retrievingData = YES;
-            [self.dataSource getLastStoriesDataFromServer:^{
+            [self.dataSource getLastStoriesDataFromServer:^(BOOL succeed){
+                if (succeed == NO) {
+                    return;
+                }
                 [UIView setAnimationsEnabled:NO];
                 [self.tableView beginUpdates];
                 [self.tableView insertSections:[NSIndexSet indexSetWithIndex:[self.dataSource numberOfSections] - 1]

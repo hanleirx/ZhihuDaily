@@ -33,12 +33,13 @@
 
 -(void)setImageFromURL:(NSURL *)url completionHandler:(void (^)(void))completion {
     if (url == nil) { return; }
+    completion = completion == nil ? ^(){return;} : completion;
     [NSData dataCacheWithIdentifier:url.absoluteString completionHandler:^(NSData *dataFromCache) {
         if (dataFromCache != nil) {
             [[GCDQueue mainQueue] executeAsync: ^{
                 self.image = [UIImage imageWithData:dataFromCache];
             }];
-            if (completion != nil) { completion(); }
+            completion();
             return;
         }
         NSURLSession* session = [NSURLSession sharedSession];
@@ -50,7 +51,7 @@
                     self.image = [UIImage imageWithData:dataFromServer];
                 }];
             }
-            if (completion != nil) { completion(); }
+            completion();
         }] resume];
     }];
 }

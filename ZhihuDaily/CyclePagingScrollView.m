@@ -34,6 +34,8 @@
     self.pagingEnabled = YES;
     [self setupSubViews];
     [self setContentOffset:CGPointMake(self.bounds.size.width, 0)];
+    self.showsHorizontalScrollIndicator = NO;
+    self.showsVerticalScrollIndicator = NO;
 }
 
 -(instancetype)init {

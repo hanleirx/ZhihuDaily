@@ -17,6 +17,7 @@
 		47337B681C2FCA6200FDF35F /* TopStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47337B671C2FCA6200FDF35F /* TopStoryView.m */; };
 		47337B711C2FD6CC00FDF35F /* UIImageView+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = 47337B701C2FD6CC00FDF35F /* UIImageView+Cache.m */; };
 		4741D5BD1C3C79C900BE54B4 /* ToolBarItemsArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4741D5BC1C3C79C900BE54B4 /* ToolBarItemsArray.m */; };
+		4764373B1C3EB0EF008D7A25 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4764373A1C3EB0EF008D7A25 /* TabBarController.m */; };
 		476CEF7A1C3274A400BF95F6 /* DailyStoryHeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 476CEF791C3274A400BF95F6 /* DailyStoryHeaderViewCell.m */; };
 		476CEF7D1C32892000BF95F6 /* NavgationBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 476CEF7C1C32892000BF95F6 /* NavgationBarView.m */; };
 		47830D251C3BF4F40067D1B1 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47830D241C3BF4F40067D1B1 /* CustomNavigationController.m */; };
@@ -59,6 +60,8 @@
 		47337B701C2FD6CC00FDF35F /* UIImageView+Cache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Cache.m"; sourceTree = "<group>"; };
 		4741D5BB1C3C79C900BE54B4 /* ToolBarItemsArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolBarItemsArray.h; sourceTree = "<group>"; };
 		4741D5BC1C3C79C900BE54B4 /* ToolBarItemsArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolBarItemsArray.m; sourceTree = "<group>"; };
+		476437391C3EB0EF008D7A25 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		4764373A1C3EB0EF008D7A25 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		476CEF781C3274A400BF95F6 /* DailyStoryHeaderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyStoryHeaderViewCell.h; sourceTree = "<group>"; };
 		476CEF791C3274A400BF95F6 /* DailyStoryHeaderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyStoryHeaderViewCell.m; sourceTree = "<group>"; };
 		476CEF7B1C32892000BF95F6 /* NavgationBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavgationBarView.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				471B2BB31C2EF08E004DFE31 /* MainTableViewController.m */,
 				472AF7D81C33B15900EFDEC0 /* DetailViewController.h */,
 				472AF7D91C33B15900EFDEC0 /* DetailViewController.m */,
+				476437391C3EB0EF008D7A25 /* TabBarController.h */,
+				4764373A1C3EB0EF008D7A25 /* TabBarController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				471B2BC11C2F0144004DFE31 /* DailyStories.m in Sources */,
 				4741D5BD1C3C79C900BE54B4 /* ToolBarItemsArray.m in Sources */,
 				47830D251C3BF4F40067D1B1 /* CustomNavigationController.m in Sources */,
+				4764373B1C3EB0EF008D7A25 /* TabBarController.m in Sources */,
 				471B2BC41C2F0ACA004DFE31 /* CyclePagingScrollView.m in Sources */,
 				47B2B1991C2FEE11009061FB /* CyclePagingScrollViewController.m in Sources */,
 				47830D311C3C14970067D1B1 /* DetailPageDataSource.m in Sources */,

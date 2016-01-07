@@ -9,8 +9,7 @@
 #import "LaunchScreenViewController.h"
 #import "LaunchScreenView.h"
 #import "GCDQueue.h"
-#import "MainTableViewController.h"
-#import "CustomNavigationController.h"
+#import "TabBarController.h"
 
 @interface LaunchScreenViewController ()
 
@@ -47,15 +46,11 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    MainTableViewController* mainTableViewController = [[MainTableViewController alloc]init];
-    [mainTableViewController retrieveDataFromServer:^{
-        [[GCDQueue mainQueue] execute:^{
-            [self.view.window.layer addAnimation:[LaunchScreenViewController fadeTransition] forKey:kCATransition];
-            CustomNavigationController *navigationController = [[CustomNavigationController alloc]
-                                                     initWithRootViewController:mainTableViewController];
-            [self presentViewController:navigationController animated:NO completion:nil];
-        } afterDelaySeconds:2];
-    }];
+    [[GCDQueue mainQueue] execute:^{
+        [self.view.window.layer addAnimation:[LaunchScreenViewController fadeTransition] forKey:kCATransition];
+        TabBarController *tabBarController = [[TabBarController alloc] init];
+        [self presentViewController:tabBarController animated:NO completion:nil];
+    } afterDelaySeconds:2];
 }
 
 @end
